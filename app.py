@@ -9,5 +9,10 @@ def catbook_home():
     cats = get_all_cats()
     return render_template("home.html", cats=cats)
 
+@app.route('/cats/<int:id>')
+def cat_id_route(id):
+	return render_template('cat.html', i = id)
+
+
 if __name__ == '__main__':
    app.run(debug = True)

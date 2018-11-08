@@ -13,6 +13,10 @@ def create_cat(name):
     session.add(cat_object)
     session.commit()
 
+def get_cat(id):
+	cat=session.query(Cat).filter_by(i=id).one()
+	return name
+
 def get_all_cats():
     cats = session.query(Cat).all()
     return cats
