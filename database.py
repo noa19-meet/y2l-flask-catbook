@@ -14,8 +14,8 @@ def create_cat(name):
     session.commit()
 
 def get_cat(id):
-	cat=session.query(Cat).filter_by(i=id).one()
-	return name
+	cat=session.query(Cat).filter_by(id=id).one()
+	return cat
 
 def get_all_cats():
     cats = session.query(Cat).all()

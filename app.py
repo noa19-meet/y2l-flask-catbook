@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
-from database import get_all_cats
-
+from database import get_all_cats, get_cat
+from flask import *
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,7 +11,8 @@ def catbook_home():
 
 @app.route('/cats/<int:id>')
 def cat_id_route(id):
-	return render_template('cat.html', i = id)
+	cat = get_cat(id)
+	return render_template('cat.html', cat=cat)
 
 
 if __name__ == '__main__':
